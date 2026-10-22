@@ -12,3 +12,11 @@
 @media(max-width:800px){.nav nav{display:none}.hero{grid-template-columns:1fr;padding-top:35px;gap:0}.hero-copy{order:1}.hero-art{order:0;height:290px}.hero-icon{width:145px;height:145px;border-radius:32px}.hero-icon img{width:128px}.orbit-one{width:260px;height:170px}.orbit-two{width:310px;height:220px}.chip-one{top:26px;right:0}.chip-two{bottom:28px;left:0}.sun-caption{bottom:-2px}.intro-grid,.getting-started{grid-template-columns:1fr}.feature-grid{grid-template-columns:repeat(2,1fr)}.sunset-banner{grid-template-columns:1fr}.banner-sun{min-height:180px;grid-row:1}.banner-copy{padding:25px}.getting-started{gap:18px}.section-heading{align-items:start;flex-direction:column;gap:6px}.section-heading>p{margin:0}.footer{flex-wrap:wrap}.footer p{order:3;flex-basis:100%}}
 @media(max-width:450px){.wrap{width:calc(100% - 28px)}.nav{padding-block:14px}.nav-cta{font-size:10px;padding:7px 10px}.brand img{width:39px;height:39px}.brand{font-size:13px}.hero{padding-bottom:45px}.hero-art{height:250px}.hero-icon{width:125px;height:125px}.hero-icon img{width:110px}h1{font-size:40px}.lead{font-size:13px}.mini-stats{gap:12px}.intro-card,.code-card{padding:19px}.feature-grid{gap:9px}.feature{padding:16px}.feature h3{font-size:13px}.feature p{font-size:11px}.features{padding-top:65px}.sunset-banner{margin-top:60px}.getting-started{padding-block:65px}.button{font-size:12px;padding:10px 13px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+
+/* Uploaded Parsian Python campaign artwork */
+.hero-art-image{overflow:hidden;border-radius:28px;min-height:0}
+.reference-image{display:block;width:100%;height:100%;object-fit:cover;border:1px solid rgba(72,157,255,.35);border-radius:22px;box-shadow:0 22px 70px rgba(0,0,0,.35)}
+.hero-reference-image{aspect-ratio:1/1;object-fit:contain;background:#061225}
+.banner-image-wrap{padding:0;overflow:hidden;min-height:0;border-radius:22px}
+.campaign-reference-image{aspect-ratio:1/1;object-fit:cover}
+@media(max-width:800px){.hero-art-image{height:auto;aspect-ratio:1/1}.banner-image-wrap{min-height:0}}
