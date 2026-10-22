@@ -1,0 +1,55 @@
+{
+  "name": "parsian-python",
+  "displayName": "Parsian-Python",
+  "description": "Syntax highlighting and run command for .pyfa files",
+  "version": "0.1.0",
+  "publisher": "parsian-python-community",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Programming Languages"],
+  "main": "./out/extension.js",
+  "activationEvents": ["onLanguage:parsian-python"],
+  "contributes": {
+    "languages": [
+      {
+        "id": "parsian-python",
+        "aliases": ["Parsian-Python", "parsian-python", "پایتون فارسی"],
+        "extensions": [".pyfa"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "parsian-python",
+        "scopeName": "source.parsian-python",
+        "path": "./syntaxes/parsian-python.tmLanguage.json"
+      }
+    ],
+    "commands": [
+      {
+        "command": "parsianPython.runFile",
+        "title": "Parsian-Python: Run Current File"
+      }
+    ],
+    "configuration": {
+      "title": "Parsian-Python",
+      "properties": {
+        "parsianPython.interpreterPath": {
+          "type": "string",
+          "default": "parsian",
+          "description": "Path to the installed Parsian-Python command."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "compile": "tsc -p ./",
+    "vscode:prepublish": "npm run compile"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.3.3"
+  }
+}
