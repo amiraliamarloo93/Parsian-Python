@@ -45,6 +45,18 @@ Set-ExecutionPolicy -Scope Process Bypass
 .\update.ps1
 ~~~
 
+## افزونهٔ Visual Studio Code (نسخهٔ توسعه)
+
+پس از نصب Node.js، در پوشهٔ vscode-extension اجرا کنید:
+
+~~~powershell
+npm install
+npm run compile
+npx --yes @vscode/vsce package
+~~~
+
+این دستور یک فایل VSIX برای نصب دستی می‌سازد. افزونه برای اجرای برنامه به مترجم Parsian-Python نصب‌شده و قابل دسترسی از PATH نیاز دارد. بستهٔ VSIX رسمی هنوز منتشر نشده است.
+
 ## عیب‌یابی
 
 - اگر فرمان py پیدا نشد، Python را از منبع رسمی نصب و ترمینال را دوباره باز کنید.
