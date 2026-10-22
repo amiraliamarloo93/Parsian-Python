@@ -1,0 +1,42 @@
+name: Package VS Code extension
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "vscode-extension/**"
+      - ".github/workflows/package-vscode-extension.yml"
+  pull_request:
+    paths:
+      - "vscode-extension/**"
+      - ".github/workflows/package-vscode-extension.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: vscode-extension
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: vscode-extension/package.json
+      - name: Install dependencies
+        run: npm install
+      - name: Compile extension
+        run: npm run compile
+      - name: Package VSIX
+        run: npx --yes @vscode/vsce package
+      - name: Upload VSIX artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: parsian-python-vsix
+          path: vscode-extension/*.vsix
+          if-no-files-found: error
