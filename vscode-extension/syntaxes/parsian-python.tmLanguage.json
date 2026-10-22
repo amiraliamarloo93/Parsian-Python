@@ -1,0 +1,36 @@
+{
+  "scopeName": "source.parsian-python",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#keywords" },
+    { "include": "#constants" }
+  ],
+  "repository": {
+    "comments": {
+      "name": "comment.line.number-sign.parsian",
+      "match": "#.*$"
+    },
+    "strings": {
+      "name": "string.quoted.double.parsian",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        { "name": "constant.character.escape.parsian", "match": "\\\\." }
+      ]
+    },
+    "numbers": {
+      "name": "constant.numeric.parsian",
+      "match": "\\b[0-9]+(?:\\.[0-9]+)?\\b"
+    },
+    "keywords": {
+      "name": "keyword.control.parsian",
+      "match": "(?<![\\p{L}\\p{N}_])(چاپ|اگر|وگرنه_اگر|وگرنه|برای|در|تا_وقتی|تابع|بازگردان|کلاس|واردکن|از|به_عنوان|تلاش|بگیر|در_پایان|ایجاد_خطا|توقف|ادامه|عبور|و|یا|نقیض)(?![\\p{L}\\p{N}_])"
+    },
+    "constants": {
+      "name": "constant.language.parsian",
+      "match": "(?<![\\p{L}\\p{N}_])(درست|نادرست|تهی)(?![\\p{L}\\p{N}_])"
+    }
+  }
+}
